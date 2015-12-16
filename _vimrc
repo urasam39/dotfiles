@@ -1,4 +1,3 @@
-"test
 " mode line
 set modeline
 set wildmenu
