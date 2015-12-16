@@ -1,3 +1,13 @@
+"test
+" mode line
+set modeline
+set wildmenu
+set wildmode=list,longest:full
+set showtabline=2
+set foldmethod=marker
+set laststatus=2
+set t_Co=256
+
 " 行番号の表示
 set nu
 
@@ -49,6 +59,14 @@ set backspace=indent,eol,start
 " 見た目によるカーソル移動をする(1行が複数行に渡って表示されている時に表示上の行ごとに上下移動させる)
 nnoremap j gj
 nnoremap k gk
+
+" chiba setting
+inoremap <C-f> <Esc>
+cnoremap <C-f> <Esc>
+lnoremap <C-f> <Esc>
+noremap <silent> <Esc><Esc> :nohlsearch<CR>
+nnoremap <silent> <Space>. :<C-u>tabedit $MYVIMRC<CR>
+nnoremap <silent> <Space>s. :<C-u>source $MYVIMRC<CR>
  
 " シンタックスを有効にする(コードをカラーを付けて見やすくする)
 syntax enable
@@ -57,13 +75,25 @@ syntax enable
 set encoding=utf8
 
 " ファイルエンコードをutf8に設定
-set fileencoding=utf-8
+set fileencodings=utf-8,sjis,iso-2022-jp,euc-jp
 
 " 編集中のファイル名を表示
 set title
 
 " ウィンドウの幅より長い行は折り返して表示
 set wrap
+
+"バッファをクリップボードにコピー(for OSX)
+set clipboard=unnamed,autoselect
+
+"In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a
+endif
+
+"auto cursol move
+set whichwrap=b,s,h,l,<,>,[,]
+
 
 " release autogroup in MyAutoCmd
 augroup MyAutoCmd
@@ -103,6 +133,16 @@ if has('vim_starting')
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'itchyny/lightline.vim'
+
+call neobundle#end()
+ " Required:
+ filetype plugin indent on
+
+ " If there are uninstalled bundles found on startup,
+ " this will conveniently prompt you to install them.
+ NeoBundleCheck
+
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
@@ -136,13 +176,6 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-call neobundle#end()
- " Required:
- filetype plugin indent on
-
- " If there are uninstalled bundles found on startup,
- " this will conveniently prompt you to install them.
- NeoBundleCheck
 " カラー設定
 " colorscheme torte
 let g:solarized_termcolors=256
@@ -177,3 +210,73 @@ let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '*'
 "}}}
 
+" lightline.vim Settings
+let g:lightline = {
+      \ 'colorscheme': 'default',
+      \ 'mode_map': { 'c': 'NORMAL' },
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'virtualenv' ] ]
+      \ },
+      \ 'component_function': {
+      \   'modified': 'MyModified',
+      \   'readonly': 'MyReadonly',
+      \   'fugitive': 'MyFugitive',
+      \   'filename': 'MyFilename',
+      \   'virtualenv': 'MyVirtualenv',
+      \   'fileformat': 'MyFileformat',
+      \   'filetype': 'MyFiletype',
+      \   'fileencoding': 'MyFileencoding',
+      \   'mode': 'MyMode',
+      \ },
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ }
+
+function! MyModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! MyReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
+endfunction
+
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+
+function! MyFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? '⭠ '._ : ''
+  endif
+  return ''
+endfunction
+
+function! MyVirtualenv()
+  if &ft !~? 'help\|vimfiler\|gundo' && exists("*virtualenv#statusline")
+    let _ = virtualenv#statusline()
+    return strlen(_) ? '✇ '._ : ''
+  endif
+  return ''
+endfunction
+" ✇☤⚒ ⚖ ⚚
+function! MyFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! MyFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! MyMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
