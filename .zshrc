@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/masarutanaka/.oh-my-zsh
+#export ZSH=/Users/masarutanaka/.oh-my-zsh
+export ZSH=/home/lab/urasam/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -52,8 +53,9 @@ ZSH_THEME="candy"
 plugins=(brew brew-cask cdd gem git rbenv vagrant)
 
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/opt/local/bin:/usr/local/bin:/home/lab/urasam/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/opt/local/bin:/home/lab/urasam/bin:/usr/X11R6/bin"
+#export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+#export PATH="/usr/local/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
