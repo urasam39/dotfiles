@@ -7,6 +7,9 @@ repo = 'Shougo/vimproc.vim'
 build = 'make'
 
 [[plugins]]
+repo   = 'Shougo/unite.vim'
+
+[[plugins]]
 repo = 'jiangmiao/auto-pairs'
 on_i = 1
 
