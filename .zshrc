@@ -124,8 +124,8 @@ setopt hist_ignore_space
 setopt hist_reduce_blanks
  
 # キーバインディングをvim風に(-eはemacs)
-#bindkey -e
-bindkey -v
+bindkey -e
+#bindkey -v
  
 # zsh-completionsの設定
 fpath=(/path/to/homebrew/share/zsh-completions $fpath)
