@@ -1,134 +1,141 @@
-# Path to your oh-my-zsh installation.
-#export ZSH=/Users/masarutanaka/.oh-my-zsh
-export ZSH=/home/lab/urasam/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="candy"
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(brew brew-cask cdd gem git rbenv vagrant)
-
-# User configuration
-export PATH="/usr/local/bin:/opt/local/bin:/home/lab/urasam/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/opt/local/bin:/home/lab/urasam/bin:/usr/X11R6/bin"
-#export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-#export PATH="/usr/local/sbin:$PATH"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-#文字コードの指定
 export LANG=ja_JP.UTF-8
- 
-# 日本語ファイル名を表示可能にする
-setopt print_eight_bit
- 
-# cdなしでディレクトリ移動
-setopt auto_cd
- 
-# ビープ音の停止
-setopt no_beep
- 
-# ビープ音の停止(補完時)
-setopt nolistbeep
- 
-# cd -<tab>で以前移動したディレクトリを表示
-setopt auto_pushd
- 
-# ヒストリ(履歴)を保存、数を増やす
-HISTFILE=~/.zsh_history
+HISTFILE=$HOME/.zsh-history
 HISTSIZE=100000
 SAVEHIST=100000
- 
-# 同時に起動したzshの間でヒストリを共有する
-setopt share_history
- 
-# 直前と同じコマンドの場合は履歴に追加しない
-setopt hist_ignore_dups
- 
-# 同じコマンドをヒストリに残さない
-setopt hist_ignore_all_dups
- 
-# スペースから始まるコマンド行はヒストリに残さない
-setopt hist_ignore_space
- 
-# ヒストリに保存するときに余分なスペースを削除する
-setopt hist_reduce_blanks
- 
-# キーバインディングをvim風に(-eはemacs)
-bindkey -e
-#bindkey -v
- 
+
+export PATH="/usr/local/bin:/opt/local/bin:/home/lab/urasam/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/opt/local/bin:/home/lab/urasam/bin:/usr/X11R6/bin"
+#基本設定#{{{
+
 # zsh-completionsの設定
-fpath=(/path/to/homebrew/share/zsh-completions $fpath)
- 
+fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit
 compinit -u
+
+## コアダンプサイズを制限
+limit coredumpsize 102400
+## 色を使う
+setopt prompt_subst
+autoload -Uz colors
+colors
+## ビープを鳴らさない
+setopt nobeep
+## 補完候補を一覧表示
+setopt auto_list
+## 直前と同じコマンドをヒストリに追加しない
+setopt hist_ignore_dups
+## TAB で順に補完候補を切り替える
+setopt auto_menu
+## zsh の開始, 終了時刻をヒストリファイルに書き込む
+setopt extended_history
+## --prefix=/usr などの = 以降も補完
+setopt magic_equal_subst
+## ヒストリを呼び出してから実行する間に一旦編集
+setopt hist_verify
+# ファイル名の展開で辞書順ではなく数値的にソート
+setopt numeric_glob_sort
+## ヒストリを共有
+setopt share_history
+## 補完候補のカーソル選択を有効に
+zstyle ':completion:*:default' menu select=1
+## 補完候補の色づけ
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+## ディレクトリ名だけで cd
+setopt auto_cd
+## カッコの対応などを自動的に補完
+setopt auto_param_keys
+## ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
+setopt auto_param_slash
+## スペルチェック
+setopt correct
+## 大文字小文字を区別しない
+#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
+# 補完候補のメニュー選択で、矢印キーの代わりにhjklで移動出来るようにする。
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+#補完リストが多いときに尋ねない
+LISTMAX=1000
+#タブキーの連打で自動的にメニュー補完
+setopt AUTO_MENU
+#補完対象のファイルの末尾に識別マークをつける
+setopt LIST_TYPES
+#C-Uで行頭まで削除
+bindkey "^U" backward-kill-line
+# 補完候補を ←↓↑→ で選択 (補完候補が色分け表示される)
+zstyle ':completion:*:default' menu select=1
+#}}}
+
+# zsh機能#{{{
+setopt hist_ignore_dups     # ignore duplication command history list
+setopt share_history        # share command history data
+# autoload predict-on
+setopt auto_cd
+setopt auto_pushd
+setopt correct
+#}}}
+
+# Start tmux on every shell login# {{{
+# https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login
+if which tmux 2>&1 >/dev/null; then
+  #if not inside a tmux session, and if no session is started, start a new session
+  test -z "$TMUX" && (tmux attach || tmux new-session)
+fi
+# }}}
+
+# Look And Feel Settings# {{{
+# ------------------------------
+### Ls Color ###
+# 色の設定
+export LSCOLORS=Exfxcxdxbxegedabagacad
+# 補完時の色の設定
+export LS_COLORS='di=34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+# ZLS_COLORSとは？
+export ZLS_COLORS=$LS_COLORS
+# lsコマンド時、自動で色がつく(ls -Gのようなもの？)
+export CLICOLOR=true
+# 補完候補に色を付ける
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+### Prompt ###
+# プロンプトに色を付ける
+autoload -U colors; colors
+#gitの情報を表示
+autoload -Uz vcs_info
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+# 一般ユーザ時
+tmp_prompt="%{${fg[yellow]}%}[%~]%{${reset_color}%} %{${fg[yellow]}%}%n%# %{${reset_color}%}"
+tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
+tmp_rprompt="%{${fg[green]}%}%{${reset_color}%}"
+tmp_sprompt="%{${fg[red]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
+
+# rootユーザ時(太字にし、アンダーバーをつける)
+if [ ${UID} -eq 0 ]; then
+  tmp_prompt="%B%U${tmp_prompt}%u%b"
+  tmp_prompt2="%B%U${tmp_prompt2}%u%b"
+  tmp_rprompt="%B%U${tmp_rprompt}%u%b"
+  tmp_sprompt="%B%U${tmp_sprompt}%u%b"
+fi
+
+PROMPT=$tmp_prompt    # 通常のプロンプト
+PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以上の時に表示される)
+RPROMPT=$tmp_rprompt'${vcs_info_msg_0_}' # 右側のプロンプト
+SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
+# SSHログイン時のプロンプト
+[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+  PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
+;
+
+## }}}
+
+
+
+alias ls="ls -GF"
+
