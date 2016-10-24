@@ -4,6 +4,16 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 export PATH="/usr/local/bin:/opt/local/bin:/home/lab/urasam/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/opt/local/bin:/home/lab/urasam/bin:/usr/X11R6/bin"
+#PYENV_ROOT=~/.pyenv
+#export PATH=$PATH:$PYENV_ROOT/bin
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="${HOME}/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
+fi
+
 #基本設定#{{{
 
 # zsh-completionsの設定
