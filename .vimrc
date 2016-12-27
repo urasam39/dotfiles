@@ -236,11 +236,19 @@ function! MyMode()
 endfunction
 "}}}
 
-" indentLine"{{{
+" previm"{{{
+let g:previm_open_cmd = 'open -a Safari'
 augroup precious-indentLine
   autocmd!
   " precious.vim が filetype を切り替える度に indentLine をリセットする
   autocmd User PreciousFileType IndentLinesReset
+augroup END
+"}}}
+
+" indentLine"{{{
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 "}}}
 

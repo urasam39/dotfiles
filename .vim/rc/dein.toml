@@ -33,6 +33,10 @@ repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
 [[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['markdown', 'mkd']
+
+[[plugins]]
 repo = 'rcmdnk/vim-markdown'
 on_ft = ['markdown', 'mkd']
 
