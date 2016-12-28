@@ -21,13 +21,13 @@ set autoindent
 set cindent
 
 " タブを表示する時の幅
-set tabstop=2
+set tabstop=4
  
 " 自動で挿入されるインデントの幅
-set shiftwidth=2
+set shiftwidth=4
  
-" タブ入力時の幅を2に設定
-set softtabstop=2
+" タブ入力時の幅を4に設定
+set softtabstop=4
  
 " 閉じ括弧入力時に対応する括弧の強調
 set showmatch
