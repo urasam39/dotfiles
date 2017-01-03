@@ -10,11 +10,11 @@ export CUDA_HOME=/usr/local/cuda
 #export PATH=$PATH:$PYENV_ROOT/bin
 #eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
-export PYENV_ROOT="${HOME}/.pyenv"
-if [ -d "${PYENV_ROOT}" ]; then
-    export PATH=${PYENV_ROOT}/bin:$PATH
-    eval "$(pyenv init -)"
-fi
+#export PYENV_ROOT="${HOME}/.pyenv"
+#if [ -d "${PYENV_ROOT}" ]; then
+#    export PATH=${PYENV_ROOT}/bin:$PATH
+#    eval "$(pyenv init -)"
+#fi
 
 #基本設定#{{{
 
