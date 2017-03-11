@@ -280,7 +280,7 @@ let g:syntastic_javascript_checker = "jshint"
 " set statusline+=%*
 "}}}
 
-" colorscheme Settings"{{{/*{{{*/
+" colorscheme Settings/*{{{*/
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_degrade=0
@@ -292,4 +292,4 @@ let g:solarized_visibility="high"
 set background=dark
 colorscheme solarized
 call togglebg#map("")
-"}}}/*}}}*/
+"/*}}}*/
