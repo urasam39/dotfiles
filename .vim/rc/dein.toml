@@ -19,6 +19,9 @@ repo = 'vim-scripts/Align'
 [[plugins]]
 repo = 'ujihisa/neco-look'
 
+#[[plugins]]
+#repo = 'jalvesaq/Nvim-R'
+
 [[plugins]]
 repo = 'jcfaria/Vim-R-plugin'
 
@@ -28,9 +31,9 @@ repo = 'jalvesaq/R-Vim-runtime'
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 
-[[plugins]] # toml syntax
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
+#[[plugins]] # toml syntax
+#repo = 'cespare/vim-toml'
+#on_ft = 'toml'
 
 [[plugins]]
 repo = 'kannokanno/previm'
