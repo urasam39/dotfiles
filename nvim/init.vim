@@ -132,6 +132,8 @@ if OSTYPE == "Darwin\n"
 	let s:dein_dir = expand('~/.cachenvimMac/dein')
 elseif OSTYPE == "Linux\n"
 	let s:dein_dir = expand('~/.cachenvimLinux/dein')
+elseif OSTYPE == "FreeBSD\n"
+	let s:dein_dir = expand('~/.cachenvimFreeBSD/dein')
 endif
 
 " dein.vim 本体
