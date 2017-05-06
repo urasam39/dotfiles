@@ -159,7 +159,23 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
 ## }}}
 
+#alias達
+case ${OSTYPE} in
+	darwin*)
+		alias ls="ls -hGF"
+		#alias nvim_clear='rm -rf ~/.vim/dein/Darwin/cache_nvim'
+		#alias vim="/usr/local/bin/vim --servername VIM"
+	;;
+	linux*)
+		alias ls="ls -h --color"
+		#alias nvim_clear='rm -rf ~/.vim/dein/Linux/cache_nvim'
+	;;
+	freebsd*)
+		alias ls="ls -GF"
+		#alias nvim_clear='rm -rf ~/.vim/dein/FreeBSD/cache_nvim'
+	;;
+esac
 
 
-alias ls="ls -GF"
+#alias ls="ls -GF"
 
