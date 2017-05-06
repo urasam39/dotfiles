@@ -126,7 +126,14 @@ augroup PluginInstall
 augroup END
 
 " プラグインが実際にインストールされているディレクトリ
-let s:dein_dir = expand('~/.cachenvim/dein')
+" OSごとにインストール場所を変更
+let OSTYPE = system('uname')
+if OSTYPE == "Darwin\n"
+	let s:dein_dir = expand('~/.cachenvimMac/dein')
+elseif OSTYPE == "Linux\n"
+	let s:dein_dir = expand('~/.cachenvimLinux/dein')
+endif
+
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
