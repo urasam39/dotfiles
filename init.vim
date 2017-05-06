@@ -145,8 +145,8 @@ let g:dein#enable_notification = 1
 " 設定開始
 if dein#load_state(s:dein_dir)
   call dein#begin(expand(s:dein_dir))
-  call dein#load_toml('~/.nvim/rc/dein.toml', {'lazy': 0})
-  call dein#load_toml('~/.nvim/rc/dein_lazy.toml', {'lazy' : 1})
+  call dein#load_toml('~/.config/nvim/dein.toml', {'lazy': 0})
+  call dein#load_toml('~/.config/nvim/dein_lazy.toml', {'lazy' : 1})
 
   " 設定終了
   call dein#end()
