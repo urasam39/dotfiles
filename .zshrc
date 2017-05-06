@@ -174,5 +174,5 @@ case ${OSTYPE} in
 		alias ls="ls -GF"
 		#alias nvim_clear='rm -rf ~/.vim/dein/FreeBSD/cache_nvim'
 	;;
-esac# }}}
-
+esac
+# }}}
