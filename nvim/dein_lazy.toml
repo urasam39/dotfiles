@@ -41,3 +41,6 @@ let R_vsplit = 1
 let R_nvimpager = "horizontal"
 '''
 
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = 'python'
