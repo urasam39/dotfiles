@@ -1,8 +1,8 @@
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
+#[[plugins]]
+#repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
 repo = 'neomake/neomake'
@@ -14,13 +14,16 @@ repo= 'altercation/vim-colors-solarized'
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
-repo = 'Shougo/context_filetype.vim'
+repo = 'cohama/lexima.vim'
 
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-depends = ['neosnippet-snippets', 'context_filetype.vim']
-on_event = 'InsertCharPre'
-on_ft = 'snippet'
+#[[plugins]]
+#repo = 'Shougo/context_filetype.vim'
+#
+#[[plugins]]
+#repo = 'Shougo/neosnippet.vim'
+#depends = ['neosnippet-snippets', 'context_filetype.vim']
+#on_event = 'InsertCharPre'
+#on_ft = 'snippet'
 
 
 #[[plugins]]
