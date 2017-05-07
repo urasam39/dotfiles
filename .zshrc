@@ -160,6 +160,9 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 ## }}}
 
 #alias達{{{
+
+alias nv="nvim"
+
 case ${OSTYPE} in
 	darwin*)
 		alias ls="ls -hGF"
