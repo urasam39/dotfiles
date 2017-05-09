@@ -174,77 +174,6 @@ endif
 "dein.vimのもろもろはここまで
 
 
-" lightline.vim Settings"{{{
-let g:lightline = {
-      \ 'colorscheme': 'default',
-      \ 'mode_map': { 'c': 'NORMAL' },
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'virtualenv' ] ]
-      \ },
-      \ 'component_function': {
-      \   'modified': 'MyModified',
-      \   'readonly': 'MyReadonly',
-      \   'fugitive': 'MyFugitive',
-      \   'filename': 'MyFilename',
-      \   'virtualenv': 'MyVirtualenv',
-      \   'fileformat': 'MyFileformat',
-      \   'filetype': 'MyFiletype',
-      \   'fileencoding': 'MyFileencoding',
-      \   'mode': 'MyMode',
-      \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-      \ }
-
-function! MyModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-
-function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
-endfunction
-
-function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != MyModified() ? ' ' . MyModified() : '')
-endfunction
-
-function! MyFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
-    let _ = fugitive#head()
-    return strlen(_) ? '⭠ '._ : ''
-  endif
-  return ''
-endfunction
-
-function! MyVirtualenv()
-  if &ft !~? 'help\|vimfiler\|gundo' && exists("*virtualenv#statusline")
-    let _ = virtualenv#statusline()
-    return strlen(_) ? '✇ '._ : ''
-  endif
-  return ''
-endfunction
-" ✇☤⚒ ⚖ ⚚
-function! MyFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
-endfunction
-
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
-endfunction
-
-function! MyFileencoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
-endfunction
-
-function! MyMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
-"}}}
 
 " previm"{{{
 "let g:previm_open_cmd = 'open -a Safari'
@@ -308,16 +237,6 @@ call togglebg#map("")
 
 let maplocalleader = ","
  
-"" deoplete
-"" Use deoplete.
-"let g:deoplete#enable_at_startup = 1
-"" Use smartcase.
-"let g:deoplete#enable_smart_case = 1
-"" for Nvim-R
-"if !exists('g:deoplete#omni_patterns')
-"    let g:deoplete#omni_patterns = {}
-"endif
-"let g:deoplete#omni_patterns.r = '[[:alnum:].\\]\+'
  
 " nvim-r
 "let R_vsplit = 1
@@ -327,3 +246,5 @@ let R_nvimpager = "horizontal"
  
 let R_objbr_place = "console,right"
 let R_objbr_opendf = 0
+
+
