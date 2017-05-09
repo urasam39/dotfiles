@@ -18,3 +18,9 @@ repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-indent-guides.rc.vim
+'''
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
