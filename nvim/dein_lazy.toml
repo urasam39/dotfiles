@@ -50,6 +50,10 @@ let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 '''
 
 [[plugins]]
-repo = 'zchee/deoplete-jedi'
+repo = 'davidhalter/jedi'
 on_ft = 'python'
 
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+on_ft = 'python'
+depends = ['deoplete.nvim','jedi']
