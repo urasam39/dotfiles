@@ -1,1 +1,2 @@
-HERE ARE DOTFILEShogehoge
+# Neovim + zsh + tmuxスタイルに移行したよ
+
