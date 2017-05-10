@@ -216,7 +216,5 @@ colorscheme solarized
 call togglebg#map("")
 "/*}}}*/
 
-
-
-
+let maplocalleader = ","
 
