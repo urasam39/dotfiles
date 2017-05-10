@@ -94,6 +94,8 @@ set whichwrap=b,s,h,l,<,>,[,]
 
 
 inoremap <C-f> <Esc>
+nnoremap <C-f> <Esc>
+vnoremap <C-f> <Esc>
 
 " neosnippet "{{{
 " <C-J> にマッピング. スニペット補完
