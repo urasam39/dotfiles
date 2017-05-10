@@ -174,23 +174,6 @@ endif
 "dein.vimのもろもろはここまで
 
 
-
-" previm"{{{
-"let g:previm_open_cmd = 'open -a Safari'
-"augroup precious-indentLine
-"  autocmd!
-"  " precious.vim が filetype を切り替える度に indentLine をリセットする
-"  autocmd User PreciousFileType IndentLinesReset
-"augroup END
-"}}}
-
-" indentLine"{{{
-"augroup PrevimSettings
-"    autocmd!
-"    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-"augroup END
-"}}}
-
 " syntastic"{{{
 let g:syntastic_enable_signs = 1
 let g:syntastic_error_symbol = '✗'
@@ -235,16 +218,5 @@ call togglebg#map("")
 
 
 
-let maplocalleader = ","
- 
- 
-" nvim-r
-"let R_vsplit = 1
-let R_assign = 0
- 
-let R_nvimpager = "horizontal"
- 
-let R_objbr_place = "console,right"
-let R_objbr_opendf = 0
 
 
