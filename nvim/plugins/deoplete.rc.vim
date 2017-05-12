@@ -27,3 +27,5 @@ call deoplete#custom#set('_', 'converters', [
 let g:deoplete#enable_camel_case = 1
 " Use smartcase.
 let g:deoplete#enable_smart_case = 1
+let g:deoplete#auto_complete_delay = 0
+let g:deoplete#auto_complete_start_length = 1
