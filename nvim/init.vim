@@ -75,6 +75,9 @@ set title
 " ウィンドウの幅より長い行は折り返して表示
 set wrap
 
+" 画面の上端と下端の位置を少し小さくする
+set scrolloff=5
+
 "バッファをクリップボードにコピー(for OSX)
 set clipboard+=unnamedplus
 "set clipboard=unnamed,autoselect
