@@ -27,3 +27,6 @@ repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'daisuzu/translategoogle.vim'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
