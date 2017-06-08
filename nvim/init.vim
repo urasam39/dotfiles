@@ -100,6 +100,14 @@ inoremap <C-f> <Esc>
 nnoremap <C-f> <Esc>
 vnoremap <C-f> <Esc>
 
+" 色を使えるように
+if has('patch-7.4.1778')
+  set guicolors
+endif
+if has('nvim')
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
 " neosnippet "{{{
 " <C-J> にマッピング. スニペット補完
 " Plugin key-mappings.
@@ -205,21 +213,33 @@ let g:syntastic_javascript_checker = "jshint"
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
-"}}}
+"}}} 
 
-" colorscheme Settings/*{{{*/
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:solarized_degrade=0
-let g:solarized_bold=1
-let g:solarized_underline=1
-let g:solarized_italic=1
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-set background=dark
-colorscheme solarized
-call togglebg#map("")
-"/*}}}*/
+
+"" colorscheme Settings/*{{{*/
+" If you have vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" Theme
+syntax enable
+colorscheme tender
+"let g:solarized_termcolors=256
+"let g:solarized_termtrans=1
+"let g:solarized_degrade=0
+"let g:solarized_bold=1
+"let g:solarized_underline=1
+"let g:solarized_italic=1
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+"set background=dark
+"colorscheme solarized
+"call togglebg#map("")
+""/*}}}*/
 
 let maplocalleader = ","
 

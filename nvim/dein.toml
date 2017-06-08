@@ -5,6 +5,18 @@ source ~/.config/nvim/plugins/lightline.rc.vim
 '''
 
 [[plugins]]
+repo= 'jacoborus/tender.vim'
+
+[[plugins]]
+repo= 'jdkanani/vim-material-theme'
+
+[[plugins]]
+repo= 'jonathanfilip/vim-lucius'
+
+[[plugins]]
+repo= 'raphamorim/lucario'
+
+[[plugins]]
 repo= 'altercation/vim-colors-solarized'
 
 [[plugins]]
