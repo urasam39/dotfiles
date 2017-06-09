@@ -95,10 +95,16 @@ endif
 "auto cursol move
 set whichwrap=b,s,h,l,<,>,[,]
 
-
+" escepeは使わない
 inoremap <C-f> <Esc>
 nnoremap <C-f> <Esc>
 vnoremap <C-f> <Esc>
+" emacs-like key mappings
+inoremap <silent> <C-p> <Up>
+inoremap <silent> <C-n> <Down>
+inoremap <silent> <C-a> <ESC>I
+inoremap <silent> <C-e> <End>
+inoremap <silent> <C-d> <Del>
 
 " 色を使えるように
 if has('patch-7.4.1778')
