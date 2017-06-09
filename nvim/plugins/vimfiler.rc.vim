@@ -6,7 +6,7 @@ call vimfiler#custom#profile('default', 'context', {
 "default explore -> vimfiler
 let g:vimfiler_as_default_explorer = 1
 "buffer directory
-nnoremap <silent> fe :<C-u>VimFilerBufferDir -quit<CR>
+"nnoremap <silent> fe :<C-u>VimFilerBufferDir -quit<CR>
 " Nerdtree like
 nnoremap <C-e> :<C-u>VimFilerBufferDir -split -winwidth=50 -toggle -no-quit<CR>
 "key mapping
