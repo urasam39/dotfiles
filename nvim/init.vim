@@ -105,6 +105,8 @@ inoremap <silent> <C-n> <Down>
 inoremap <silent> <C-a> <ESC>I
 inoremap <silent> <C-e> <End>
 inoremap <silent> <C-d> <Del>
+" tabを開く
+nnoremap <C-w>t :tabnew<CR>
 
 " 色を使えるように
 if has('patch-7.4.1778')
