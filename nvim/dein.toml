@@ -42,3 +42,16 @@ repo = 'daisuzu/translategoogle.vim'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+hook_add = '''
+nnoremap <silent> fb :<C-u>Unite buffer<CR>
+'''
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+depends = 'unite.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/vimfiler.rc.vim
+'''
