@@ -10,6 +10,12 @@ source ~/.config/nvim/plugins/deoplete.rc.vim
 '''
 
 [[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_if = 1
+on_event = 'TextYankPost'
+on_source = ['unite.vim', 'denite.nvim']
+
+[[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 on_source = ['unite.vim', 'vimshell.vim']
