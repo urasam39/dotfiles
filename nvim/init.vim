@@ -99,6 +99,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 inoremap <C-f> <Esc>
 nnoremap <C-f> <Esc>
 vnoremap <C-f> <Esc>
+tnoremap <silent> <C-f> <C-\><C-n>
 " emacs-like key mappings
 inoremap <silent> <C-p> <Up>
 inoremap <silent> <C-n> <Down>
