@@ -10,6 +10,17 @@ source ~/.config/nvim/plugins/deoplete.rc.vim
 '''
 
 [[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_if = 1
+on_event = 'TextYankPost'
+on_source = ['unite.vim', 'denite.nvim']
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+on_source = ['unite.vim', 'vimshell.vim']
+
+[[plugins]]
 repo = 'Shougo/neosnippet'
 hook_source = '''
   imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -20,15 +31,12 @@ on_i  = 1
 on_ft = ['snippet']
 depends = ['neosnippet-snippets']
 
-
-
 [[plugins]]
 repo= 'jalvesaq/Nvim-R'
 on_ft = ['rmd','r']
 hook_source = '''
 source ~/.config/nvim/plugins/Nvim-R.rc.vim
 '''
-
 
 [[plugins]]
 repo = 'w0rp/ale'
@@ -49,7 +57,6 @@ on_ft = 'python'
 repo = 'zchee/deoplete-jedi'
 on_ft = 'python'
 depends = ['deoplete.nvim','jedi']
-
 
 [[plugins]]
 repo = 'iamcco/mathjax-support-for-mkdp'
