@@ -38,6 +38,9 @@ source ~/.config/nvim/plugins/vim-indent-guides.rc.vim
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
 repo = 'daisuzu/translategoogle.vim'
 
 [[plugins]]
