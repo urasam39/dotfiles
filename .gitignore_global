@@ -4,3 +4,8 @@
 *.swp
 *.swo
 *._*
+*.gz
+*.log
+*.fls
+*.dvi
+*.fdb_latexmk
