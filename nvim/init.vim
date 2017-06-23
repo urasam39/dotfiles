@@ -17,6 +17,9 @@ set ruler
 " 自動インデントを有効にする
 set autoindent
 
+" 改行時に前の行の構文をチェックし次の行のインデントを増減する
+set smartindent
+
 "C言語スタイルのインデントを自動で入れる
 set cindent
 
@@ -117,6 +120,20 @@ if has('patch-7.4.1778')
 endif
 if has('nvim')
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+" なんかインデントがずれるのを修正してくれるらしい
+if &term =~ "xterm"
+  let &t_SI .= "\e[?2004h"
+  let &t_EI .= "\e[?2004l"
+  let &pastetoggle = "\e[201~"
+
+  function XTermPasteBegin(ret)
+    set paste
+    return a:ret
+  endfunction
+
+  inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
 endif
 
 " neosnippet "{{{
