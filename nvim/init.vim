@@ -80,6 +80,8 @@ set scrolloff=5
 
 "バッファをクリップボードにコピー(for OSX)
 set clipboard+=unnamedplus
+"ファイルを開いた時に，カーソル位置を最後にカーソルがあった位置まで移動
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 "set clipboard=unnamed,autoselect
 
 " release autogroup in MyAutoCmd
