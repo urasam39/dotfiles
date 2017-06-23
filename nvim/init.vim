@@ -1,7 +1,7 @@
 " mode line
 set modeline
 set wildmenu
-set wildmode=list,longest:full
+set wildmode=list:full
 set showtabline=2
 set foldmethod=marker
 set laststatus=2
