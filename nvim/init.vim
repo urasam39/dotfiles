@@ -14,21 +14,6 @@ set nu
 " 右下に表示される行・列の番号を表示
 set ruler
 
-" 自動インデントを有効にする
-set autoindent
-
-" 改行時に前の行の構文をチェックし次の行のインデントを増減する
-set smartindent
-
-" タブを表示する時の幅
-set tabstop=4
- 
-" 自動で挿入されるインデントの幅
-set shiftwidth=4
- 
-" タブ入力時の幅を4に設定
-set softtabstop=4
- 
 " 閉じ括弧入力時に対応する括弧の強調
 set showmatch
  
@@ -203,6 +188,28 @@ endif
 "これを書かないと毎回読んでくれないのかな…？
 " Required:
 filetype plugin indent on
+
+" 自動インデントを有効にする
+set autoindent
+" 改行時に前の行の構文をチェックし次の行のインデントを増減する
+set smartindent
+" Cの自動インデントをする
+set cindent
+" 新しい行を作った時に高度な自動インデントを行う
+set smarttab
+" タブを空白に置き換え
+set expandtab
+" タブを表示する時の幅
+set tabstop=4
+" 自動で挿入されるインデントの幅
+set shiftwidth=4
+" タブ入力時の幅を4に設定
+set softtabstop=4
+if has("autocmd")
+    autocmd FileType python setlocal sw=4 sts=4 ts=4 et
+    autocmd FileType r setlocal sw=2 sts=2 ts=2 et
+endif
+
 
 " もし、未インストールものものがあったらインストール
 if dein#check_install()
