@@ -17,9 +17,6 @@ set ruler
 " 自動インデントを有効にする
 set autoindent
 
-"C言語スタイルのインデントを自動で入れる
-set cindent
-
 " タブを表示する時の幅
 set tabstop=4
  
