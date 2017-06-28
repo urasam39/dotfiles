@@ -263,7 +263,7 @@ set cursorline
 "autocmd ColorScheme * highlight Comment ctermfg=22 guifg=
 colorscheme tender
 hi CursorLineNr ctermfg=185 guifg=#c9d05c
-"hi Comment term=bold   ctermfg=180 guifg=#d3b987 guisp=Cyan
+hi Comment ctermfg=242 ctermbg=234 guifg=#666666 guibg=#1d1d1d
 "let g:solarized_termcolors=256
 "let g:solarized_termtrans=1
 "let g:solarized_degrade=0
