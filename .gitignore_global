@@ -10,3 +10,4 @@
 *.dvi
 *.fdb_latexmk
 *.pyc
+*.tmp.R
