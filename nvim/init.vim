@@ -8,6 +8,10 @@ set laststatus=2
 set t_Co=256
 set nocompatible
 
+" 文字化けが治るとか治らないとか
+set ttimeout
+set ttimeoutlen=50
+
 " 行番号の表示
 set nu
 
