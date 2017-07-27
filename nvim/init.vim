@@ -101,9 +101,9 @@ inoremap <silent> <C-d> <Del>
 nnoremap <C-w>t :tabnew<CR>
 
 " 色を使えるように
-if has('patch-7.4.1778')
-  set guicolors
-endif
+" if has('patch-7.4.1778')
+"   set guicolors
+" endif
 if has('nvim')
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
@@ -253,14 +253,14 @@ let g:syntastic_javascript_checker = "jshint"
 "}}} 
 
 
-"" colorscheme Settings/*{{{*/
-" If you have vim >=8.0 or Neovim >= 0.1.5
-if (has("termguicolors"))
- set termguicolors
-endif
-
-" For Neovim 0.1.3 and 0.1.4
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+""" colorscheme Settings/*{{{*/
+"" If you have vim >=8.0 or Neovim >= 0.1.5
+"if (has("termguicolors"))
+" set termguicolors
+"endif
+"
+"" For Neovim 0.1.3 and 0.1.4
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Theme
 syntax enable
