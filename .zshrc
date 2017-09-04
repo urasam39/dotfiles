@@ -12,6 +12,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/li
 export CPATH=$CPATH:/usr/loca/cuda/include
 export CUDA_INC_DIR=/usr/local/cuda/bin:$CUDA_INC_DIR 
 export XDG_CONFIG_HOME=$HOME/.config
+export PYTHONPATH=/usr/bin:/usr/lib:/usr/local/lib:/usr/local/bin
 
 ### Virtualenvwrapper
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
