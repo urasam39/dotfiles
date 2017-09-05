@@ -1,7 +1,10 @@
-if !exists('g:deoplete#omni_patterns')
-    let g:deoplete#omni_patterns = {}
-endif
-let g:deoplete#omni_patterns.r = '[[:alnum:].\\]\+'
+"if !exists('g:deoplete#omni_patterns')
+"    let g:deoplete#omni_patterns = {}
+"endif
+"let g:deoplete#omni_patterns.r = '[[:alnum:].\\]\+'
+let g:deoplete#omni_input_patterns = {}
+let g:deoplete#omni_input_patterns.r =
+        \ '\w\+\|[^. \t]->\w*\|\w\+::\w*'
 "n-vim
 vmap <Space> <Plug>RDSendSelection
 nmap <Space> <Plug>RDSendLine
