@@ -163,6 +163,7 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 #alias達{{{
 
 alias nv="nvim"
+alias g="git"
 
 case ${OSTYPE} in
 	darwin*)
