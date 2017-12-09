@@ -12,3 +12,9 @@
 *.pyc
 *.tmp.R
 .nfs*
+__pycache__
+.Rproj.user
+.Rhistory
+.RData
+.ipynb_checkpoints
+*.pyc
