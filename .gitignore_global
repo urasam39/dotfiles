@@ -8,6 +8,7 @@
 *.log
 *.fls
 *.dvi
+*.aux
 *.fdb_latexmk
 *.pyc
 *.tmp.R
