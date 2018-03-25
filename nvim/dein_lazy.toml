@@ -18,7 +18,7 @@ source ~/.config/nvim/plugins/deoplete.rc.vim
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
-on_source = ['unite.vim', 'vimshell.vim']
+on_source = ['unite.vim', 'vimshell.vim', 'vim-quickrun']
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
@@ -65,6 +65,13 @@ depends = ['deoplete.nvim','jedi']
 [[plugins]]
 repo = 'Vimjas/vim-python-pep8-indent'
 on_ft = 'python'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+on_ft = 'python'
+hook_source = '''
+source ~/.config/nvim/plugins/quickrun.rc.vim
+'''
 
 [[plugins]]
 repo = 'iamcco/mathjax-support-for-mkdp'
