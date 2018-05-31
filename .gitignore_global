@@ -10,6 +10,10 @@
 *.dvi
 *.aux
 *.fdb_latexmk
+*.out
+*.snm
+*.toc
+*.nav
 *.pyc
 *.tmp.R
 .nfs*
