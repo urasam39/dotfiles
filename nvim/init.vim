@@ -87,13 +87,15 @@ endif
 set whichwrap=b,s,h,l,<,>,[,]
 
 " escepeは使わない
-inoremap <C-f> <Esc>
-nnoremap <C-f> <Esc>
-vnoremap <C-f> <Esc>
-tnoremap <silent> <C-f> <C-\><C-n>
+inoremap <C-q> <Esc>
+nnoremap <C-q> <Esc>
+vnoremap <C-q> <Esc>
+tnoremap <silent> <C-q> <C-\><C-n>
 " emacs-like key mappings
 inoremap <silent> <C-p> <Up>
 inoremap <silent> <C-n> <Down>
+inoremap <silent> <C-f> <Right>
+inoremap <silent> <C-b> <Left>
 inoremap <silent> <C-a> <ESC>I
 inoremap <silent> <C-e> <End>
 inoremap <silent> <C-d> <Del>
