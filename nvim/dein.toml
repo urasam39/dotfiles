@@ -42,6 +42,9 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'daisuzu/translategoogle.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/translategoogle.rc.vim
+'''
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
