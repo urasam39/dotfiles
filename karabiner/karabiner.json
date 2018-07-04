@@ -481,14 +481,14 @@
                         ]
                     },
                     {
-                        "description": "Change control+bnpf to arrow keys",
+                        "description": "Change right_command+hjkl to arrow keys",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "b",
+                                    "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "control"
+                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -504,10 +504,10 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "n",
+                                    "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "control"
+                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -523,10 +523,10 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "p",
+                                    "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
-                                            "control"
+                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -542,10 +542,10 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "f",
+                                    "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
-                                            "control"
+                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
