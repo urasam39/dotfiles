@@ -70,3 +70,9 @@ repo = 'Shougo/neco-syntax'
 
 [[plugins]]
 repo = 'ujihisa/neco-look'
+
+[[plugins]]
+repo = 'luochen1990/rainbow'
+hook_add = '''
+let g:rainbow_active = 1
+'''
