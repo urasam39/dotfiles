@@ -76,3 +76,5 @@ repo = 'luochen1990/rainbow'
 hook_add = '''
 let g:rainbow_active = 1
 '''
+[[plugins]]
+repo = 'anekos/char-counter-vim'
