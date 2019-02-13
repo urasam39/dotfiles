@@ -2,7 +2,7 @@ let g:lightline = {
       \ 'colorscheme': 'tender',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'virtualenv','ale' ] ]
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'virtualenv','ale','wordcount' ] ]
       \ },
       \ 'component_function': {
       \   'modified': 'MyModified',
@@ -15,6 +15,7 @@ let g:lightline = {
       \   'filetype': 'MyFiletype',
       \   'fileencoding': 'MyFileencoding',
       \   'mode': 'MyMode',
+      \   'wordcount': 'MyWordCount',
       \ },
       \ 'separator': { 'left': '⮀', 'right': '⮂' },
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
@@ -67,4 +68,8 @@ endfunction
 
 function! MyMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+function! MyWordCount()
+    return b:charCounterCount
 endfunction
